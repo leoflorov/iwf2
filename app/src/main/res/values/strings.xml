@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">НФР</string>
+    <string name="nav_item_attachment">Attachment</string>
+    <string name="nav_item_images">Images</string>
+    <string name="nav_item_location">My Location</string>
+    <string name="nav_sub_menu">Sub Menu</string>
+    <string name="nav_sub_menu_item01">Sub Menu Item 1</string>
+    <string name="nav_sub_menu_item02">Sub Menu Item 2</string>
+    <string name="drawer_header_text">Независимая Федерация Реслинга</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="hello_world">Привет Мир!</string>
+    <string name="action_settings">Настройки</string>
+    <string name="app_name_main">НФР</string>
+    <string name="appbar_name_salads">Салаты</string>
+    <string name="roster">Участники</string>
+    <string name="favorites">Избранное</string>
+    <string name="next_show">Шоу</string>
+    <string name="settings">Настройки</string>
+    <string name="about_app">О программе</string>
+    <string name="saladTxt">Салаты</string>
+    <string name="anton_deryabin_descr">Антон Дерябин</string>
+    <string name="add_recipe_logo">Добавить\nрецепт</string>
+    <string name="news_tab_textview">Новости</string>
+    <string name="name_antonDeryabin">Антон Дерябин</string>
+    <string name="name_sergwhiteButton">Сергей Белый</string>
+    <string name="name_lokoButton">Локомотив</string>
+    <string name="name_gromovButton">Иван Громов</string>
+    <string name="name_lapatkaButton">Лапатка</string>
+    <string name="name_kremnevButton">Максим Кремнёв</string>
+    <string name="name_jokerButton">Джокер</string>
+    <string name="name_crimsonButton">Ронни Кримсон</string>
+    <string name="name_vulkanButton">Вулкан</string>
+    <string name="name_schukinButton">Алексей Щукин</string>
+    <string name="buy_tickets_bar_name">Купить билеты</string>
+    <string name="fab">fab</string>
+    <string name="favorites_toolbar_name">Избранное</string>
+    <string name="contacts_menu_item">Контакты</string>
+    <string name="add_category_view">Категория</string>
+    <string name="add_recipe_view">Название</string>
+    <string name="buytickets_toolbar_name">Купить билет</string>
+    <string name="second_activity_text">damn</string>
+    <string name="ingridients_txt">Ингридиенты</string>
+    <string name="instruction_txt">Инструкция</string>
+    <string name="time_exp_txt">Время</string>
+    <string name="antoderyabin_param_txt"><b>Параметры:</b>\nРост: 1 метр 90 см.\n Вес: 120 кг.\n Место проживания: г. Москва\n Дебют: 23 июля 2006 года, «Новая Кровь 2006»\n Спортивная подготовка: Школа НФР</string>
+    <string name="antonderyabin_titul_info"><b>Чемпионские титулы и награды:</b>\n- Чемпион НФР (6 раз)\n- обладатель Кубка\n- Чемпион Москвы\n- Чемпион НФР в парных боях (со Славой Нескубиным) (2 раза)</string>
+    <string name="antonderyabin_moves_info"><b>Приемы реслера:</b>\n- Карусель удачи, Двухметровый каттэр, Биг Бут, Мощный слем</string>
+    <string name="antonderyabin_links_info"><b>Ссылки на профили в соцсетях:</b>\n http://vk.com/anton_deryabin\n https://www.facebook.com/anton.deryabin\n https://twitter.com/Anton_Deryabin </string>
+
+    <!-- Google Maps menu -->
+
+    <!--Google API keys-->
+    <string name="google_map_api_key">AIzaSyCGE4TkcKNWauEVCQGMaQUS6Sx1pmUX-0I</string>
+    <string name="contacts_name">Контакты</string>
+</resources>
