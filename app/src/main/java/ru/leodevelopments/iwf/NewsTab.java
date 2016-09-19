@@ -1,5 +1,6 @@
 package ru.leodevelopments.iwf;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,18 +27,20 @@ public class NewsTab extends Fragment {
 
     public Elements title;
     private ArrayList<String> titleList = new ArrayList<>();
-    private ArrayAdapter<String> adapter;
+    private ArrayAdapter adapter;
     private ListView lv;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.news_layout, null);
 
-        lv = (ListView) getView().findViewById(R.id.listView1);
+        View view = inflater.inflate(R.layout.news_layout, null);
+        lv = (ListView) view.findViewById(R.id.listView1);
         new NewThread().execute();
-        adapter = new ArrayAdapter<String>(this, R.layout.list_item, R.id.product_name, titleList);
+        lv.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),
+                R.layout.list_item, R.id.product_name, titleList));
 
+        return view;
     }
 
     public class NewThread extends AsyncTask<String, Void, String> {
@@ -46,8 +49,8 @@ public class NewsTab extends Fragment {
 
             Document doc;
             try {
-                doc = Jsoup.connect("http://www.wrestlingfederation.ru/").get();
-                title = doc.select(".title");
+                doc = Jsoup.connect("http://www.wrestlingfederation.ru/news.php").get();
+                title = doc.select(".black");
                 titleList.clear();
                 for (Element titles : title) {
                     titleList.add(titles.text());
@@ -61,7 +64,7 @@ public class NewsTab extends Fragment {
         @Override
         protected void onPostExecute(String result) {
 
-            lv.setAdapter(adapter);
+            lv.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.product_name, titleList));
         }
     }
 }
