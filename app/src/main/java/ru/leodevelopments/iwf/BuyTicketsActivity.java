@@ -1,19 +1,12 @@
 package ru.leodevelopments.iwf;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import leodevelopments.iwf.R;
 
@@ -28,12 +21,12 @@ public class BuyTicketsActivity extends Activity {
 
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle onSaveInstanceState) {
+        super.onCreate(onSaveInstanceState);
         setContentView(R.layout.buytickets_layout);
-        downloadStatus = (TextView) findViewById(R.id.download_status);
-        Button btnDownload = (Button) findViewById(R.id.btn_download);
-        btnDownload.setOnClickListener(onDownloadListener());
+//        downloadStatus = (TextView) findViewById(R.id.download_status);
+//        Button btnDownload = (Button) findViewById(R.id.btn_download);
+//        btnDownload.setOnClickListener(onDownloadListener());
 
 //        btnAdd = (Button) findViewById(R.id.saveRecipeButton);
 //        btnAdd.setOnClickListener(this);
@@ -51,51 +44,51 @@ public class BuyTicketsActivity extends Activity {
         ticketsWebView.getSettings().setBuiltInZoomControls(true);
 
     }
-
-    private View.OnClickListener onDownloadListener() {
-        return new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(BuyTicketsActivity.this, DownloadService.class);
-                intent.putExtra(DownloadService.FILENAME, "logo.jpg");
-                intent.putExtra(DownloadService.URL, "http://www.wrestlingfederation.ru/images/logo.jpg");
-                startService(intent);
-                downloadStatus.setText("Загрузка...");
-            }
-        };
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        registerReceiver(receiver, new IntentFilter(DownloadService.NOTIFICATION));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        unregisterReceiver(receiver);
-    }
-
-    private BroadcastReceiver receiver = new BroadcastReceiver() {
-        @SuppressLint("SetTextI18n")
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            Bundle bundle = intent.getExtras();
-            if (bundle != null) {
-                int resultCode = bundle.getInt(DownloadService.RESULT);
-                if (resultCode == RESULT_OK) {
-                    Toast.makeText(BuyTicketsActivity.this, "Файл загружен!", Toast.LENGTH_LONG).show();
-                    downloadStatus.setText("Загрузка завершена");
-                } else {
-                    Toast.makeText(BuyTicketsActivity.this, "Ошибка загрузки", Toast.LENGTH_LONG).show();
-                    downloadStatus.setText("Загрузка не удалась");
-                }
-            }
-        }
-    };
 }
+
+//    private View.OnClickListener onDownloadListener() {
+//        return new View.OnClickListener() {
+//            @SuppressLint("SetTextI18n")
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(BuyTicketsActivity.this, DownloadService.class);
+//                intent.putExtra(DownloadService.FILENAME, "logo.jpg");
+//                intent.putExtra(DownloadService.URL, "http://www.wrestlingfederation.ru/images/logo.jpg");
+//                startService(intent);
+//                downloadStatus.setText("Загрузка...");
+//            }
+//        };
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        registerReceiver(receiver, new IntentFilter(DownloadService.NOTIFICATION));
+//    }
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        unregisterReceiver(receiver);
+//    }
+//
+//    private BroadcastReceiver receiver = new BroadcastReceiver() {
+//        @SuppressLint("SetTextI18n")
+//        @Override
+//        public void onReceive(Context context, Intent intent) {
+//            Bundle bundle = intent.getExtras();
+//            if (bundle != null) {
+//                int resultCode = bundle.getInt(DownloadService.RESULT);
+//                if (resultCode == RESULT_OK) {
+//                    Toast.makeText(BuyTicketsActivity.this, "Файл загружен!", Toast.LENGTH_LONG).show();
+//                    downloadStatus.setText("Загрузка завершена");
+//                } else {
+//                    Toast.makeText(BuyTicketsActivity.this, "Ошибка загрузки", Toast.LENGTH_LONG).show();
+//                    downloadStatus.setText("Загрузка не удалась");
+//                }
+//            }
+//        }
+//    };
 
 //        mDataBaseHelper = new DatabaseHelper(this, "myrecipes.db", null, 1);
 //

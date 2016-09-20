@@ -11,7 +11,14 @@
         android:gravity="center"
         android:id="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/holo_green_dark"
-        android:text="@string/news_tab_textview"/>
+        android:textColor="@android:color/holo_green_dark"/>
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
 
 </RelativeLayout>
