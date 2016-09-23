@@ -6,19 +6,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-public class DatabaseHelper extends SQLiteOpenHelper implements BaseColumns {
+class DatabaseHelper extends SQLiteOpenHelper implements BaseColumns {
     // имя базы данных
-    public static final String DATABASE_NAME = "myrecipes.db";
+    private static final String DATABASE_NAME = "myrecipes.db";
     //версия базы данных
-    public static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 1;
     //имя таблицы
-    public static final String DATABASE_TABLE = "recipes";
+    private static final String DATABASE_TABLE = "recipes";
     //названия столбцов
-    public static final String CATEGORY_NAME_COLUMN = "category";
-    public static final String RECIPE_NAME_COLUMN = "name";
-    public static final String INSTRUCTION_COLUMN = "instruction";
+    private static final String CATEGORY_NAME_COLUMN = "category";
+    private static final String RECIPE_NAME_COLUMN = "name";
+    private static final String INSTRUCTION_COLUMN = "instruction";
     public static final String PHOTO_COLUMN = "photo";
-    public static final String INGREDIENTS_COLUMN = "ingredients";
+    private static final String INGREDIENTS_COLUMN = "ingredients";
 //    private static final String DATABASE_CREATE_SCRIPT = " create table "
 //            + DATABASE_TABLE + " ("+ BaseColumns._ID
 //            + " integer primary key autoincrement, " + RECIPE_NAME_COLUMN

@@ -16,7 +16,6 @@ import leodevelopments.iwf.R;
 public class ContactsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     LocationManager mLockManager;
-    private GoogleMap mMap;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
@@ -32,8 +31,6 @@ public class ContactsActivity extends AppCompatActivity implements OnMapReadyCal
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
-        mMap = googleMap;
-
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -44,11 +41,11 @@ public class ContactsActivity extends AppCompatActivity implements OnMapReadyCal
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        mMap.setMyLocationEnabled(true);
+        googleMap.setMyLocationEnabled(true);
 
-        mMap.getUiSettings().setMyLocationButtonEnabled(false);
+        googleMap.getUiSettings().setMyLocationButtonEnabled(false);
 
-        mMap.getUiSettings().setZoomControlsEnabled(true);
+        googleMap.getUiSettings().setZoomControlsEnabled(true);
 
     }
 }

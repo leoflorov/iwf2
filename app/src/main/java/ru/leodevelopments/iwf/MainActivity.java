@@ -148,9 +148,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     static class DesignDemoPagerAdapter extends FragmentStatePagerAdapter {
-        public static int int_items = 3;
+        static int int_items = 3;
 
-        public DesignDemoPagerAdapter(FragmentManager fm) {
+        DesignDemoPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 

@@ -1,6 +1,5 @@
 package ru.leodevelopments.iwf;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -37,7 +36,7 @@ public class NewsTab extends Fragment {
         View view = inflater.inflate(R.layout.news_layout, null);
         lv = (ListView) view.findViewById(R.id.listView1);
         new NewThread().execute();
-        lv.setAdapter(new ArrayAdapter<String>(getActivity().getApplicationContext(),
+        lv.setAdapter(new ArrayAdapter<>(getActivity().getApplicationContext(),
                 R.layout.list_item, R.id.product_name, titleList));
 
         return view;
@@ -64,7 +63,7 @@ public class NewsTab extends Fragment {
         @Override
         protected void onPostExecute(String result) {
 
-            lv.setAdapter(new ArrayAdapter<String>(getActivity(), R.layout.list_item, R.id.product_name, titleList));
+            lv.setAdapter(new ArrayAdapter<>(getActivity(), R.layout.list_item, R.id.product_name, titleList));
         }
     }
 }
