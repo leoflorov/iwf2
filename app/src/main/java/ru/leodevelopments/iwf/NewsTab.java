@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import leodevelopments.iwf.R;
 
 
-
 public class NewsTab extends Fragment {
 
     public Elements title;

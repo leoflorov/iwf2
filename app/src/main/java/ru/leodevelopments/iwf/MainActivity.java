@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -31,6 +32,7 @@ import leodevelopments.iwf.R;
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+    private static final String TAG = "MyMessage";
 
     @Override
     protected void onCreate(@Nullable final Bundle onSaveInstanceState) {
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Log.i(TAG, "OnCreate");
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,48 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i(TAG, "onSaveInstanceState");
     }
 
     @Override
@@ -142,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void antonDeryabinButton(View view){
+    public void antonDeryabinButton(View view) {
         Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
         startActivity(intent);
     }
@@ -187,6 +233,5 @@ public class MainActivity extends AppCompatActivity {
             return null;
 
         }
-
     }
 }
