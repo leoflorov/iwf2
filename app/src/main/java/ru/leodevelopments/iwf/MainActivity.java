@@ -2,6 +2,7 @@ package ru.leodevelopments.iwf;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(MenuItem menuItem) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 menuItem.setChecked(true);
                 mDrawerLayout.closeDrawers();
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
@@ -188,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void antonDeryabinButton(View view) {
+    public void superstarButton(View view) {
         Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
         startActivity(intent);
     }
