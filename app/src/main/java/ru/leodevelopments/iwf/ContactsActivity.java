@@ -15,7 +15,7 @@ import leodevelopments.iwf.R;
 
 public class ContactsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    LocationManager mLockManager;
+    private LocationManager mLockManager;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {

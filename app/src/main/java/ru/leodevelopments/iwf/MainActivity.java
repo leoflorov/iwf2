@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle args = getArguments();
             int tabPosition = args.getInt(TAB_POSITION);
 
-            ArrayList<String> items = new ArrayList<String>();
+            ArrayList<String> items = new ArrayList<>();
             for (int i = 0; i < 50; i++) {
                 items.add("Tab #" + tabPosition + " item #" + i);
             }
@@ -189,13 +189,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void superstarButton(View view) {
+    public void superstarButton() {
         Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
         startActivity(intent);
     }
 
     static class DesignDemoPagerAdapter extends FragmentStatePagerAdapter {
-        static int int_items = 3;
+        static final int int_items = 3;
 
         DesignDemoPagerAdapter(FragmentManager fm) {
             super(fm);

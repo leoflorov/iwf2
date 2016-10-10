@@ -14,7 +14,7 @@ import leodevelopments.iwf.R;
 
 class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-    private List<String> mItems;
+    private final List<String> mItems;
 
     RecyclerAdapter(List<String> items) {
         mItems = items;

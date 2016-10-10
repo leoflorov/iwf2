@@ -23,8 +23,7 @@ import leodevelopments.iwf.R;
 
 public class NewsTab extends Fragment {
 
-    public Elements title;
-    private ArrayList<String> titleList = new ArrayList<>();
+    private final ArrayList<String> titleList = new ArrayList<>();
     private ArrayAdapter adapter;
     private ListView lv;
 
@@ -41,14 +40,14 @@ public class NewsTab extends Fragment {
         return view;
     }
 
-    public class NewThread extends AsyncTask<String, Void, String> {
+    private class NewThread extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... arg) {
 
             Document doc;
             try {
                 doc = Jsoup.connect("http://www.wrestlingfederation.ru/news.php").get();
-                title = doc.select(".black");
+                Elements title = doc.select(".black");
                 titleList.clear();
                 for (Element titles : title) {
                     titleList.add(titles.text());
