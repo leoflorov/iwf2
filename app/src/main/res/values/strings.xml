@@ -52,4 +52,5 @@
     <!--Google API keys-->
     <string name="google_map_api_key">AIzaSyCGE4TkcKNWauEVCQGMaQUS6Sx1pmUX-0I</string>
     <string name="contacts_name">Контакты</string>
+    <string name="loko_uri">http://www.wrestlingfederation.ru/roster/mini/lokomotiv.jpg</string>
 </resources>
