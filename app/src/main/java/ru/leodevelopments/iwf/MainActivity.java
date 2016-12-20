@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 //                return true;
                 if (menuItem.getItemId() == R.id.contacts_menu_button) {
-                    Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+                    Intent intent = new Intent(MainActivity.this, MainSuperstarActivity.class);
                     startActivity(intent);
 
                 }

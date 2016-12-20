@@ -12,10 +12,10 @@ public class BuyTicketsActivity extends Activity {
         super.onCreate(onSaveInstanceState);
         setContentView(R.layout.buytickets_layout);
 
-//        WebView ticketsWebView = (WebView) findViewById(R.id.buy_tickets_webview);
-//        ticketsWebView.loadUrl("http://wrestlingfederation14-03.ticketforevent.com/ru");
-//        ticketsWebView.getSettings().setSupportZoom(true);
-//        ticketsWebView.getSettings().setBuiltInZoomControls(true);
+        WebView ticketsWebView = (WebView) findViewById(R.id.webview);
+        ticketsWebView.loadUrl("http://wrestlingfederation14-03.ticketforevent.com/ru");
+        ticketsWebView.getSettings().setSupportZoom(true);
+        ticketsWebView.getSettings().setBuiltInZoomControls(true);
 
     }
 }
