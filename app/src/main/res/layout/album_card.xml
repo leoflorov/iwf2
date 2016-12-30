@@ -1,5 +1,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -53,7 +54,8 @@
                 android:layout_below="@id/thumbnail"
                 android:layout_marginTop="@dimen/ic_album_overflow_margin_top"
                 android:scaleType="centerCrop"
-                android:src="@drawable/spam" />
+                android:src="@drawable/icon"
+                android:layout_above="@+id/count" />
 
         </RelativeLayout>
 

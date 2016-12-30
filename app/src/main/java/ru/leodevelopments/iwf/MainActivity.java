@@ -10,6 +10,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -25,6 +26,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ss.bottomnavigation.BottomNavigation;
+import com.ss.bottomnavigation.events.OnSelectedItemChangeListener;
+
 import java.util.ArrayList;
 
 import leodevelopments.iwf.R;
@@ -32,6 +36,7 @@ import leodevelopments.iwf.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FragmentTransaction transaction;
     private DrawerLayout mDrawerLayout;
     private static final String TAG = "MyMessage";
 
@@ -65,6 +70,36 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 return false;
+            }
+        });
+
+        BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
+        bottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
+            @Override
+            public void onSelectedItemChanged(int itemId) {
+                switch (itemId){
+                    case R.id.tab_home:
+                        transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_fragment_containers,new NewsTab());
+                        break;
+                    case R.id.tab_images:
+                        transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_fragment_containers,new RosterTab());
+                        break;
+                    case R.id.tab_camera:
+                        transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_fragment_containers,new NextShowTab());
+                        break;
+                    case R.id.tab_products:
+                        transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_fragment_containers,new RosterTab());
+                        break;
+                    case R.id.tab_more:
+                        transaction=getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame_fragment_containers,new NewsTab());
+                        break;
+                }
+                transaction.commit();
             }
         });
 
