@@ -1,8 +1,9 @@
 <resources>
-    <string name="action_add_favourite">Add to Favourites</string>
-    <string name="action_play_next">Play Next</string>
+    <string name="action_wrestler_contacts">Контакты</string>
+    <string name="action_wrestlercard_stat_txt">Статистика</string>
     <string name="backdrop_title">LOVE MUSIC</string>
-    <string name="backdrop_subtitle">This season top 20 albums</string>
+    <string name="appbar_name_salads">Реслеры НФР</string>
+    <string name="backdrop_subtitle">Основной ростер НФР</string>
     <string name="app_name">НФР</string>
     <string name="nav_item_attachment">Attachment</string>
     <string name="nav_item_images">Images</string>
@@ -15,15 +16,12 @@
     <string name="hello_world">Привет Мир!</string>
     <string name="action_settings">Настройки</string>
     <string name="app_name_main">НФР</string>
-    <string name="appbar_name_salads">Салаты</string>
     <string name="roster">Участники</string>
     <string name="favorites">Избранное</string>
     <string name="next_show">Шоу</string>
     <string name="settings">Настройки</string>
     <string name="about_app">О программе</string>
-    <string name="saladTxt">Салаты</string>
     <string name="anton_deryabin_descr">Антон Дерябин</string>
-    <string name="add_recipe_logo">Добавить\nрецепт</string>
     <string name="news_tab_textview">Новости</string>
     <string name="name_antonDeryabin">Антон Дерябин</string>
     <string name="name_sergwhiteButton">Сергей Белый</string>
@@ -43,7 +41,6 @@
     <string name="add_recipe_view">Название</string>
     <string name="buytickets_toolbar_name">Купить билет</string>
     <string name="second_activity_text">damn</string>
-    <string name="ingridients_txt">Ингридиенты</string>
     <string name="instruction_txt">Инструкция</string>
     <string name="time_exp_txt">Время</string>
     <string name="antoderyabin_param_txt"><b>Параметры:</b>\nРост: 1 метр 90 см.\n Вес: 120 кг.\n Место проживания: г. Москва\n Дебют: 23 июля 2006 года, «Новая Кровь 2006»\n Спортивная подготовка: Школа НФР</string>

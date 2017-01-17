@@ -37,7 +37,7 @@ import leodevelopments.iwf.R;
 public class MainActivity extends AppCompatActivity {
 
     private FragmentTransaction transaction;
-    private DrawerLayout mDrawerLayout;
+    public DrawerLayout mDrawerLayout;
     private static final String TAG = "MyMessage";
 
     @Override
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
+/*        BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
             @Override
             public void onSelectedItemChanged(int itemId) {
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 transaction.commit();
             }
-        });
+        });*/
 
         Log.i(TAG, "OnCreate");
 
