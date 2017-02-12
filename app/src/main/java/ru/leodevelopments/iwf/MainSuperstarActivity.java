@@ -5,6 +5,7 @@ package ru.leodevelopments.iwf;
         import android.os.Bundle;
         import android.support.design.widget.AppBarLayout;
         import android.support.design.widget.CollapsingToolbarLayout;
+        import android.support.v4.app.Fragment;
         import android.support.v7.app.AppCompatActivity;
         import android.support.v7.widget.DefaultItemAnimator;
         import android.support.v7.widget.GridLayoutManager;
@@ -24,8 +25,8 @@ package ru.leodevelopments.iwf;
 public class MainSuperstarActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private AlbumsAdapter adapter;
-    private List<Album> albumList;
+    private RosterAdapter adapter;
+    private List<Roster> rosterList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +39,8 @@ public class MainSuperstarActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        albumList = new ArrayList<>();
-        adapter = new AlbumsAdapter(this, albumList);
+        rosterList = new ArrayList<>();
+        adapter = new RosterAdapter(this, rosterList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -105,38 +106,38 @@ public class MainSuperstarActivity extends AppCompatActivity {
                 R.drawable.vertigo,
                 R.drawable.vulkan};
 
-        Album a = new Album("Еретик", 13, covers[0]);
-        albumList.add(a);
+        Roster a = new Roster("Еретик", 13, covers[0]);
+        rosterList.add(a);
 
-        a = new Album("Рейв", 8, covers[1]);
-        albumList.add(a);
+        a = new Roster("Рейв", 8, covers[1]);
+        rosterList.add(a);
 
-        a = new Album("Сергей Белый", 11, covers[2]);
-        albumList.add(a);
+        a = new Roster("Сергей Белый", 11, covers[2]);
+        rosterList.add(a);
 
-        a = new Album("Флекс Блудберг", 12, covers[3]);
-        albumList.add(a);
+        a = new Roster("Флекс Блудберг", 12, covers[3]);
+        rosterList.add(a);
 
-        a = new Album("Фредди Мачетте", 14, covers[4]);
-        albumList.add(a);
+        a = new Roster("Фредди Мачетте", 14, covers[4]);
+        rosterList.add(a);
 
-        a = new Album("Алексей Щукин", 1, covers[5]);
-        albumList.add(a);
+        a = new Roster("Алексей Щукин", 1, covers[5]);
+        rosterList.add(a);
 
-        a = new Album("Серж Салливан", 11, covers[6]);
-        albumList.add(a);
+        a = new Roster("Серж Салливан", 11, covers[6]);
+        rosterList.add(a);
 
-        a = new Album("Джокер", 14, covers[7]);
-        albumList.add(a);
+        a = new Roster("Джокер", 14, covers[7]);
+        rosterList.add(a);
 
-        a = new Album("Спайк Дайсмен", 11, covers[8]);
-        albumList.add(a);
+        a = new Roster("Спайк Дайсмен", 11, covers[8]);
+        rosterList.add(a);
 
-        a = new Album("Вертиго", 17, covers[9]);
-        albumList.add(a);
+        a = new Roster("Вертиго", 17, covers[9]);
+        rosterList.add(a);
 
-        a = new Album("Вулкан", 17, covers[10]);
-        albumList.add(a);
+        a = new Roster("Вулкан", 17, covers[10]);
+        rosterList.add(a);
 
         adapter.notifyDataSetChanged();
     }

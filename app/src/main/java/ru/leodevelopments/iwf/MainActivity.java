@@ -65,10 +65,16 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 //                return true;
                 if (menuItem.getItemId() == R.id.contacts_menu_button) {
+                    Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+                    startActivity(intent);
+
+                }
+                if (menuItem.getItemId() == R.id.roster_menu_button) {
                     Intent intent = new Intent(MainActivity.this, MainSuperstarActivity.class);
                     startActivity(intent);
 
                 }
+
                 return false;
             }
         });
@@ -230,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     static class DesignDemoPagerAdapter extends FragmentStatePagerAdapter {
-        static final int int_items = 3;
+        static final int int_items = 2;
 
         DesignDemoPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -243,8 +249,6 @@ public class MainActivity extends AppCompatActivity {
                     return new NextShowTab();
                 case 1:
                     return new NewsTab();
-                case 2:
-                    return new RosterTab();
             }
             return null;
         }
@@ -262,8 +266,6 @@ public class MainActivity extends AppCompatActivity {
                     return "ШОУ";
                 case 1:
                     return "НОВОСТИ";
-                case 2:
-                    return "УЧАСТНИКИ";
             }
 
             return null;

@@ -4,17 +4,17 @@ package ru.leodevelopments.iwf;
  * Created by Leonid on 20.12.2016.
  */
 
-public class Album {
+class Roster {
         private String name;
-        private int numOfSongs;
+        private int numOfWins;
         private int thumbnail;
 
-        public Album() {
+        public Roster() {
         }
 
-        public Album(String name, int numOfSongs, int thumbnail) {
+        Roster(String name, int numOfWins, int thumbnail) {
             this.name = name;
-            this.numOfSongs = numOfSongs;
+            this.numOfWins = numOfWins;
             this.thumbnail = thumbnail;
         }
 
@@ -26,15 +26,15 @@ public class Album {
             this.name = name;
         }
 
-        public int getNumOfSongs() {
-            return numOfSongs;
+        int getNumOfWins() {
+            return numOfWins;
         }
 
-        public void setNumOfSongs(int numOfSongs) {
-            this.numOfSongs = numOfSongs;
+        public void setNumOfWins(int numOfWins) {
+            this.numOfWins = numOfWins;
         }
 
-        public int getThumbnail() {
+        int getThumbnail() {
             return thumbnail;
         }
 

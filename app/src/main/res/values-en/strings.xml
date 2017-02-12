@@ -31,4 +31,6 @@
     <string name="roster">Roster</string>
     <string name="settings">Settings</string>
     <string name="time_exp_txt">Time</string>
+    <string name="action_wrestlercard_stat_txt">Statistics</string>
+    <string name="backdrop_title">Независимая Федерация Реслинга</string>
 </resources>

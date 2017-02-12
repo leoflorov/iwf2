@@ -12,8 +12,8 @@
     <color name="yellow">#efe230</color>
     <color name="dark_yellow">#d2c72b</color>
     <color name="ripple_material_light_1">#1f000000</color>
-    <color name="red_primary_header">#a90a0a</color>
+    <color name="red_primary_header">#cd201f</color>
     <color name="gray_primary_header">#6e6d6d</color>
-    <color name="red_header">#be3921</color>
+    <color name="red_header">#cd201f</color>
     <color name="gray_header">#898686</color>
 </resources>

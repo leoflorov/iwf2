@@ -18,16 +18,16 @@ package ru.leodevelopments.iwf;
 
         import leodevelopments.iwf.R;
 
-public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHolder> {
+class RosterAdapter extends RecyclerView.Adapter<RosterAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Album> albumList;
+    private List<Roster> rosterList;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView title, count;
-        public ImageView thumbnail, overflow;
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView title, count;
+        ImageView thumbnail, overflow;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             count = (TextView) view.findViewById(R.id.count);
@@ -37,9 +37,9 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     }
 
 
-    public AlbumsAdapter(Context mContext, List<Album> albumList) {
+    RosterAdapter(Context mContext, List<Roster> rosterList) {
         this.mContext = mContext;
-        this.albumList = albumList;
+        this.rosterList = rosterList;
     }
 
     @Override
@@ -52,12 +52,12 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
-        Album album = albumList.get(position);
-        holder.title.setText(album.getName());
-        holder.count.setText(album.getNumOfSongs() + " побед");
+        Roster roster = rosterList.get(position);
+        holder.title.setText(roster.getName());
+        holder.count.setText(roster.getNumOfWins() + mContext.getString(R.string.roster_menu_win_button));
 
-        // loading album cover using Glide library
-        Glide.with(mContext).load(album.getThumbnail()).into(holder.thumbnail);
+        // loading roster cover using Glide library
+        Glide.with(mContext).load(roster.getThumbnail()).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,19 +82,19 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
     /**
      * Click listener for popup menu items
      */
-    class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
+    private class MyMenuItemClickListener implements PopupMenu.OnMenuItemClickListener {
 
-        public MyMenuItemClickListener() {
+        MyMenuItemClickListener() {
         }
 
         @Override
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_wrestler_contacts:
-                    Toast.makeText(mContext, "Контакты", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Контакты", Toast.LENGTH_SHORT).show(); //сделать поп-ап меню с контактами реслера, либо нижний навигэйшн бар
                     return true;
                 case R.id.action_wrestlercard_stats:
-                    Toast.makeText(mContext, "Статистика", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, "Статистика", Toast.LENGTH_SHORT).show(); // тоже самое, что и в первом случае, только на отдельную активити
                     return true;
                 default:
             }
@@ -104,6 +104,6 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return albumList.size();
+        return rosterList.size();
     }
 }

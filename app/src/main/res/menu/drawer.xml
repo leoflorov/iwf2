@@ -3,9 +3,9 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/categories_menu_button"
+            android:id="@+id/roster_menu_button"
             android:checked="true"
-            android:icon="@drawable/ic_attachment"
+            android:icon="@drawable/ic_people_black_24dp"
             android:title="@string/roster" />
         <item
             android:id="@+id/favorites_menu_button"
