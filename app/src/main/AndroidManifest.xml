@@ -48,7 +48,7 @@
             android:label="@string/contacts_name"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name="ru.leodevelopments.iwf.MainSuperstarActivity"
+        <activity android:name="ru.leodevelopments.iwf.RosterActivity"
             android:label="@string/backdrop_title">
         </activity>
     </application>

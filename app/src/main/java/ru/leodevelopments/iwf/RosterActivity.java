@@ -1,43 +1,48 @@
 package ru.leodevelopments.iwf;
 
-        import android.content.res.Resources;
-        import android.graphics.Rect;
-        import android.os.Bundle;
-        import android.support.design.widget.AppBarLayout;
-        import android.support.design.widget.CollapsingToolbarLayout;
-        import android.support.v4.app.Fragment;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.DefaultItemAnimator;
-        import android.support.v7.widget.GridLayoutManager;
-        import android.support.v7.widget.RecyclerView;
-        import android.support.v7.widget.Toolbar;
-        import android.util.TypedValue;
-        import android.view.View;
-        import android.widget.ImageView;
+import android.content.res.Resources;
+import android.graphics.Rect;
+import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.ImageView;
 
-        import com.bumptech.glide.Glide;
+import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
-        import java.util.ArrayList;
-        import java.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
-        import leodevelopments.iwf.R;
+import leodevelopments.iwf.R;
 
-public class MainSuperstarActivity extends AppCompatActivity {
+public class RosterActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
     private RosterAdapter adapter;
     private List<Roster> rosterList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.superstars_activivty_layout);
+        setContentView(R.layout.roster_activivty_layout);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        ImageView imageView = (ImageView) findViewById(R.id.eretic);
+        Picasso.with(this)
+                .load("http://www.resling.tv/roster/main/deryabin.png")
+                .into(imageView);
+
         initCollapsingToolbar();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         rosterList = new ArrayList<>();
         adapter = new RosterAdapter(this, rosterList);
@@ -94,7 +99,8 @@ public class MainSuperstarActivity extends AppCompatActivity {
      */
     private void prepareAlbums() {
         int[] covers = new int[]{
-                R.drawable.eretic,
+
+                R.id.eretic,
                 R.drawable.rave,
                 R.drawable.white,
                 R.drawable.flexx,

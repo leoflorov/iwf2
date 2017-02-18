@@ -7,8 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -25,7 +23,7 @@ public class BuyTicketsActivity extends Activity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(BuyTicketsActivity.this, MainSuperstarActivity.class);
+                Intent intent = new Intent(BuyTicketsActivity.this, RosterActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,13 +39,14 @@ public class BuyTicketsActivity extends Activity {
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 //                return true;
                 if (menuItem.getItemId() == R.id.contacts_menu_button) {
-                    Intent intent = new Intent(BuyTicketsActivity.this, MainSuperstarActivity.class);
+                    Intent intent = new Intent(BuyTicketsActivity.this, RosterActivity.class);
                     startActivity(intent);
 
                 }
                 return false;
             }
         });
+
 /*        WebView ticketsWebView = (WebView) findViewById(R.id.webview);
         ticketsWebView.loadUrl("http://wrestlingfederation14-03.ticketforevent.com/ru");
         ticketsWebView.getSettings().setSupportZoom(true);

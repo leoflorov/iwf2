@@ -1,9 +1,11 @@
 package ru.leodevelopments.iwf;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -26,9 +28,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ss.bottomnavigation.BottomNavigation;
-import com.ss.bottomnavigation.events.OnSelectedItemChangeListener;
-
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 
 import leodevelopments.iwf.R;
@@ -44,40 +45,46 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable final Bundle onSaveInstanceState) {
         super.onCreate(onSaveInstanceState);
         setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-        }
-        assert actionBar != null;
-        actionBar.setDisplayHomeAsUpEnabled(true);
+            setSupportActionBar(toolbar);
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
+            }
+            assert actionBar != null;
+            actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+            mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                menuItem.setChecked(true);
-                mDrawerLayout.closeDrawers();
+            NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    menuItem.setChecked(true);
+                    mDrawerLayout.closeDrawers();
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 //                return true;
-                if (menuItem.getItemId() == R.id.contacts_menu_button) {
-                    Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
-                    startActivity(intent);
+                    if (menuItem.getItemId() == R.id.contacts_menu_button) {
+                        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+                        startActivity(intent);
 
+                    }
+                    if (menuItem.getItemId() == R.id.roster_menu_button) {
+                        Intent intent = new Intent(MainActivity.this, RosterActivity.class);
+                        startActivity(intent);
+
+                    }
+                    if (menuItem.getItemId() == R.id.show_menu_button) {
+                        Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
+                        startActivity(intent);
+
+                    }
+
+                    return false;
                 }
-                if (menuItem.getItemId() == R.id.roster_menu_button) {
-                    Intent intent = new Intent(MainActivity.this, MainSuperstarActivity.class);
-                    startActivity(intent);
-
-                }
-
-                return false;
-            }
-        });
+            });
 
 /*        BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
@@ -109,24 +116,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        Log.i(TAG, "OnCreate");
+            Log.i(TAG, "OnCreate");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, BuyTicketsActivity.class);
-                startActivity(intent);
-            }
-        });
+/*            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, BuyTicketsActivity.class);
+                    startActivity(intent);
+                }
+            });*/
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
 
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_favorites:
 
-        DesignDemoPagerAdapter adapter = new DesignDemoPagerAdapter(getSupportFragmentManager());
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        viewPager.setAdapter(adapter);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
-        tabLayout.setupWithViewPager(viewPager);
-    }
+                            case R.id.action_schedules:
+
+                            case R.id.action_music:
+
+                        }
+                        return true;
+                    }
+                });
+
+            DesignDemoPagerAdapter adapter = new DesignDemoPagerAdapter(getSupportFragmentManager());
+            ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+            viewPager.setAdapter(adapter);
+            TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout);
+            tabLayout.setupWithViewPager(viewPager);
+        }
 
     @Override
     protected void onStart() {
@@ -272,4 +296,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
 }
