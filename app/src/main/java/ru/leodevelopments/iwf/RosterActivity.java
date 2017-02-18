@@ -56,7 +56,8 @@ public class RosterActivity extends AppCompatActivity {
         prepareAlbums();
 
         try {
-            Glide.with(this).load(R.drawable.deryabin_width).into((ImageView) findViewById(R.id.backdrop));
+            Picasso.with(this).load("http://www.wrestlingfederation.ru/images/logo.jpg")
+                    .into((ImageView) findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
