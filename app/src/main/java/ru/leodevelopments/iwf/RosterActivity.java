@@ -1,16 +1,21 @@
 package ru.leodevelopments.iwf;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -26,6 +31,7 @@ public class RosterActivity extends AppCompatActivity {
 
     private RosterAdapter adapter;
     private List<Roster> rosterList;
+    public DrawerLayout mDrawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +40,36 @@ public class RosterActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                menuItem.setChecked(true);
+                mDrawerLayout.closeDrawers();
+//                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+//                return true;
+                if (menuItem.getItemId() == R.id.contacts_menu_button) {
+                    Intent intent = new Intent(RosterActivity.this, ContactsActivity.class);
+                    startActivity(intent);
+
+                }
+                if (menuItem.getItemId() == R.id.roster_menu_button) {
+                    Intent intent = new Intent(RosterActivity.this, RosterActivity.class);
+                    startActivity(intent);
+
+                }
+                if (menuItem.getItemId() == R.id.show_menu_button) {
+                    Intent intent = new Intent(RosterActivity.this, SuperstarActivity.class);
+                    startActivity(intent);
+
+                }
+
+                return false;
+            }
+        });
 
         ImageView imageView = (ImageView) findViewById(R.id.eretic);
         Picasso.with(this)
