@@ -16,13 +16,11 @@ import leodevelopments.iwf.R;
 
 public class ContactsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private LocationManager mLockManager;
-
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contacts_layout);
-        mLockManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        LocationManager mLockManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         final MapFragment mapFragment = (MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map);

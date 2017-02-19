@@ -1,18 +1,15 @@
 package ru.leodevelopments.iwf;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -28,8 +25,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 
 import leodevelopments.iwf.R;
@@ -37,7 +32,6 @@ import leodevelopments.iwf.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FragmentTransaction transaction;
     public DrawerLayout mDrawerLayout;
     private static final String TAG = "MyMessage";
 
@@ -86,36 +80,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-/*        BottomNavigation bottomNavigation=(BottomNavigation)findViewById(R.id.bottom_navigation);
-        bottomNavigation.setOnSelectedItemChangeListener(new OnSelectedItemChangeListener() {
-            @Override
-            public void onSelectedItemChanged(int itemId) {
-                switch (itemId){
-                    case R.id.tab_home:
-                        transaction=getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_fragment_containers,new NewsTab());
-                        break;
-                    case R.id.tab_images:
-                        transaction=getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_fragment_containers,new RosterTab());
-                        break;
-                    case R.id.tab_camera:
-                        transaction=getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_fragment_containers,new NextShowTab());
-                        break;
-                    case R.id.tab_products:
-                        transaction=getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_fragment_containers,new RosterTab());
-                        break;
-                    case R.id.tab_more:
-                        transaction=getSupportFragmentManager().beginTransaction();
-                        transaction.replace(R.id.frame_fragment_containers,new NewsTab());
-                        break;
-                }
-                transaction.commit();
-            }
-        });*/
-
             Log.i(TAG, "OnCreate");
 
 /*            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -134,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.action_favorites:
+                            case R.id.action_roster:
 
-                            case R.id.action_schedules:
+                            case R.id.action_show:
 
-                            case R.id.action_music:
+                            case R.id.action_tickets:
 
                         }
                         return true;
@@ -245,18 +209,13 @@ public class MainActivity extends AppCompatActivity {
                 items.add("Tab #" + tabPosition + " item #" + i);
             }
 
-            View v = inflater.inflate(R.layout.superstars_layout, container, false);
+            View v = inflater.inflate(R.layout.activity_main, container, false);
             RecyclerView recyclerView = (RecyclerView) v.findViewById(R.id.recyclerview);
             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView.setAdapter(new RecyclerAdapter(items));
 
             return v;
         }
-    }
-
-    public void superstarButton() {
-        Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
-        startActivity(intent);
     }
 
     static class DesignDemoPagerAdapter extends FragmentStatePagerAdapter {
