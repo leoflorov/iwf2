@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 
+        /*Создадим тулбар и экшнбар приложения*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
             ActionBar actionBar = getSupportActionBar();
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
             assert actionBar != null;
             actionBar.setDisplayHomeAsUpEnabled(true);
 
+
+        /* Тут определим боковое меню приложения */
             mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
             NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -63,17 +66,16 @@ public class MainActivity extends AppCompatActivity {
                     if (menuItem.getItemId() == R.id.contacts_menu_button) {
                         Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
                         startActivity(intent);
-
                     }
+
                     if (menuItem.getItemId() == R.id.roster_menu_button) {
                         Intent intent = new Intent(MainActivity.this, RosterActivity.class);
                         startActivity(intent);
-
                     }
+
                     if (menuItem.getItemId() == R.id.show_menu_button) {
                         Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
                         startActivity(intent);
-
                     }
 
                     return false;
@@ -90,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });*/
+
+/* Добавим новомодный нижниий тулбар для удобной навигации по меню */
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
 
@@ -255,5 +260,4 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-
 }

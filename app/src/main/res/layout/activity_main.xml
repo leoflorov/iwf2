@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                app:itemBackground="@color/yellow"
+                app:itemBackground="@color/white"
                 app:itemIconTint="@color/cardview_dark_background"
                 app:itemTextColor="@color/cardview_dark_background"
                 app:menu="@menu/bottom_navigation_main"

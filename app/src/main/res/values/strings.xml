@@ -12,6 +12,10 @@
     <string name="nav_sub_menu_item01">Sub Menu Item 1</string>
     <string name="nav_sub_menu_item02">Sub Menu Item 2</string>
     <string name="drawer_header_text">Независимая Федерация Реслинга</string>
+    <string name="main_site">resling.tv</string>
+    <string name="contacts_txt">По вопросам сотрудничества:\n8 (903) 592 88 15\nE-mail: iwf@wrestlingfederation.ru\n\nПо вопросам приобретения билетов и аккредитации на шоу:\n8 (903) 591 97 17\nE-mail: sb@wrestlingfederation.ru\n\n
+For international booking in IWF, E-mail: international@wrestlingfederation.ru</string>
+    <string name="contacts_line">\n    <b>Контактная информация:</b> \n\n г. Москва, 5 минут от ст. м. «Домодедовская» \n ул. генерала Белова, д. 18. ЦКИ «Авангард»</string>
     <string name="title_activity_second">SecondActivity</string>
     <string name="hello_world">Привет Мир!</string>
     <string name="action_settings">Настройки</string>
