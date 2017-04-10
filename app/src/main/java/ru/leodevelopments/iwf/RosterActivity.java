@@ -71,10 +71,10 @@ public class RosterActivity extends AppCompatActivity {
             }
         });
 
-        ImageView imageView = (ImageView) findViewById(R.id.eretic);
+ /*       ImageView imageView = (ImageView) findViewById(R.id.eretic);
         Picasso.with(this)
                 .load("http://www.resling.tv/roster/main/deryabin.png")
-                .into(imageView);
+                .into(imageView);*/
 
         initCollapsingToolbar();
 
@@ -137,7 +137,7 @@ public class RosterActivity extends AppCompatActivity {
     private void prepareAlbums() {
         int[] covers = new int[]{
 
-                R.id.eretic,
+                R.drawable.eretic,
                 R.drawable.rave,
                 R.drawable.white,
                 R.drawable.flexx,

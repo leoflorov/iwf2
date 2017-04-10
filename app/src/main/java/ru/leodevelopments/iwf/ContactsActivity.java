@@ -2,6 +2,7 @@ package ru.leodevelopments.iwf;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.util.TypedValue;
 import android.view.View;
 
 
@@ -59,5 +61,10 @@ public class ContactsActivity extends AppCompatActivity implements OnMapReadyCal
 
         googleMap.getUiSettings().setZoomControlsEnabled(true);
 
+    }
+
+    private int dpToPx() {
+        Resources r = getResources();
+        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, r.getDisplayMetrics()));
     }
 }
