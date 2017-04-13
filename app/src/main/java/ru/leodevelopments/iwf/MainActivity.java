@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if (menuItem.getItemId() == R.id.show_menu_button) {
-                        Intent intent = new Intent(MainActivity.this, SuperstarActivity.class);
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
                         startActivity(intent);
                     }
 
