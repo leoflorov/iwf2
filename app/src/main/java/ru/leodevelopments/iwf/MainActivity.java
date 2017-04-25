@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     public DrawerLayout mDrawerLayout;
     private static final String TAG = "MyMessage";
+    private Fragment fragment;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(@Nullable final Bundle onSaveInstanceState) {
@@ -97,14 +99,16 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
-
+        fragmentManager = getSupportFragmentManager();
         bottomNavigationView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
-                            case R.id.action_roster:
 
+                            case R.id.action_roster:
+                             /*   fragment = new RosterFragment();
+                                break; и так далее*/
                             case R.id.action_show:
 
                             case R.id.action_tickets:
