@@ -26,8 +26,8 @@ class RosterAdapter extends RecyclerView.Adapter<RosterAdapter.MyViewHolder> {
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, count;
         ImageView thumbnail, overflow;
-
-        MyViewHolder(View view) {
+        MyViewHolder
+        (View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
             count = (TextView) view.findViewById(R.id.count);

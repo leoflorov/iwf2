@@ -24,6 +24,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 import java.util.ArrayList;
 
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             });*/
 
 /* Добавим новомодный нижниий тулбар для удобной навигации по меню */
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView)
                 findViewById(R.id.bottom_navigation);
