@@ -24,7 +24,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 
 import java.util.ArrayList;
 
@@ -66,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
                     mDrawerLayout.closeDrawers();
 //                Toast.makeText(MainActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 //                return true;
-                    if (menuItem.getItemId() == R.id.contacts_menu_button) {
-                        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
-                        startActivity(intent);
-                    }
+//                    if (menuItem.getItemId() == R.id.contacts_menu_button) {
+//                        Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+//                        startActivity(intent);
+//                    }
 
                     if (menuItem.getItemId() == R.id.roster_menu_button) {
                         Intent intent = new Intent(MainActivity.this, RosterActivity.class);

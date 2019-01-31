@@ -16,4 +16,5 @@
     <color name="gray_primary_header">#6e6d6d</color>
     <color name="red_header">#cd201f</color>
     <color name="gray_header">#898686</color>
+    <color name="blue">#198ef5</color>
 </resources>
